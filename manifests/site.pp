@@ -48,6 +48,6 @@ node default {
    ensure => file,
    owner => 'root',
    group => 'root',
-      content => 'How to use travic-ci' \n',
+      content => "How to use travis-ci \n",
    }
 }
