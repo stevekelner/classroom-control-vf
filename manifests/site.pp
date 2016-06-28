@@ -44,10 +44,17 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   
-  file { '/etc/motd':
-   ensure => file,
-   owner => 'root',
-   group => 'root',
-      content => "How to use travis-ci \n",
-   }
+  #file { '/etc/motd':
+   #ensure => file,
+   #owner => 'root',
+   #group => 'root',
+  #    content => "How to use travis-ci \n",
+   #}
+   
+   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+     path => '/usr/bin:/usr/local/bin',
+     creates => '/etc/motd',
+     
+     }
 }
+
