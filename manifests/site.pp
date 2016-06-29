@@ -56,6 +56,11 @@ node default {
   #    content => "How to use travis-ci \n",
    #}
    
+   if $::virtual != 'physical' {
+     $vmname = capitalize($::virtual)
+     notify { "This is a virtual machine- ${vmname}.":}
+     }
+   
    #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
    #  path => '/usr/bin:/usr/local/bin',
     # creates => '/etc/motd',
