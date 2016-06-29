@@ -57,6 +57,5 @@ node default {
      
      #}
      
-     include users
-}
+    }
 
