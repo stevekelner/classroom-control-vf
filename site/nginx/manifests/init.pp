@@ -2,9 +2,9 @@ class nginx {
 package { 'nginx':
 ensure => present,
  File {
-  $owner => 'root',
-  $group => 'root',
-  $mode => '0644',
+  owner => 'root',
+  group => 'root',
+  mode => '0644',
   }
 }
 file { ['/var/www', '/etc/nginx/conf.d']:
