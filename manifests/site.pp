@@ -58,7 +58,8 @@ node default {
    
    if $::virtual != 'physical' {
      $vmname = capitalize($::virtual)
-     notice ("This is a ${vmname} virtual machine.")
+     #notice ("This is a ${vmname} virtual machine.")
+     notify { "This is a ${vmname} virtual machine.": }
      }
    
    #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
