@@ -32,6 +32,7 @@ ini_setting { 'random ordering':
 include memcached
 include nginx
 include skeleton
+include users::admin
 
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
@@ -56,11 +57,11 @@ node default {
   #    content => "How to use travis-ci \n",
    #}
    
-   if $::virtual != 'physical' {
-     $vmname = capitalize($::virtual)
+   #if $::virtual != 'physical' {
+     #$vmname = capitalize($::virtual)
      #notice ("This is a ${vmname} virtual machine.")
-     notify { "This is a ${vmname} virtual machine.": }
-     }
+     #notify { "This is a ${vmname} virtual machine.": }
+     #}
    
    #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
    #  path => '/usr/bin:/usr/local/bin',
