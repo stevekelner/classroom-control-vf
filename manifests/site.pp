@@ -32,7 +32,7 @@ ini_setting { 'random ordering':
 include memcached
 include nginx
 include skeleton
-#include users::admin
+include users::admins
 
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
